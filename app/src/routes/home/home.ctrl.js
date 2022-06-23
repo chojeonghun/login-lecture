@@ -11,8 +11,8 @@ const output = {
 }
 
 const users = {
-    id: ["woorimIT", "나개발", "김팀장"],
-    passwd: ["1234", "1234", "123456"]
+    id: ["4545","woorimIT", "나개발", "김팀장"],
+    passwd: ["4545","1234", "1234", "123456"],
 };
 
 const process = {
@@ -21,10 +21,12 @@ const process = {
         psword = req.body.psword
 
         if(users.id.includes(id)){
-            const idx = users.id.indexOf(id);
-            if(users.psword[idx] === psword){
+            const idx = users.id.indexOf(id);            
+            if(users.passwd[idx] === psword){
+  
                 return res.json({
-                    success: true,
+                    success: "true",
+                    msg: "로그인에 성공하셨습니다."
                 })
             }
         }
