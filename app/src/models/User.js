@@ -7,11 +7,10 @@ class User{
        this.body = body; 
     }
 
-    login(){
+    async login(){
         const client = this.body;
-        const {id, psword} =UserStorage.getUserInfo(client.id);
-       
-        if(id){
+        const {id, psword} =await UserStorage.getUserInfo(client.id);
+         if(id){
             if(id === client.id && psword === client.psword){
                 return { success: true};
             }
@@ -25,7 +24,6 @@ class User{
             const response = UserStorage.save(client);
             return response;
         }
-
 }
 
 module.exports = User;
