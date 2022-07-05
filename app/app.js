@@ -5,7 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");   
 const logger = require("./src/config/logger");
-logger.log("error", "Hello 구독자님들.");
+//logger.log("error", "Hello 구독자님들.");
 
 const app = express();
 dotenv.config();
